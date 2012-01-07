@@ -1,0 +1,19 @@
+= form_for @admin_test_category do |f|
+  -if @admin_test_category.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@admin_test_category.errors.count, "error")} prohibited this admin_test_category from being saved:"
+      %ul
+        - @admin_test_category.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :name
+    = f.text_field :name
+  .field
+    = f.label :description
+    = f.text_area :description
+  .field
+    = f.label :is_active
+    = f.check_box :is_active
+  .actions
+    = f.submit 'Save'

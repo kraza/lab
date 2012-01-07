@@ -1,0 +1,16 @@
+- debugger
+%p#notice= notice
+
+%p
+  %b Name:
+  = @admin_test_category.name
+%p
+  %b Description:
+  = @admin_test_category.description
+%p
+  %b Is active:
+  = @admin_test_category.is_active
+
+= link_to 'Edit', edit_admin_test_category_path(@admin_test_category)
+\|
+= link_to 'Back', admin_test_categories_path

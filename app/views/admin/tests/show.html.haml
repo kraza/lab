@@ -1,0 +1,25 @@
+- debugger
+%p#notice= notice
+
+%p
+  %b Category:
+  = @admin_test.admin_test_category.name
+%p
+  %b Code:
+  = @admin_test.code
+%p
+  %b Name:
+  = @admin_test.name
+%p
+  %b Fees:
+  = @admin_test.fees
+%p
+  %b Commission type:
+  = @admin_test.commission_type
+%p
+  %b Commissin value:
+  = @admin_test.commissin_value
+
+= link_to 'Edit', edit_admin_test_path(@admin_test)
+\|
+= link_to 'Back', admin_tests_path
