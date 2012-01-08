@@ -1,6 +1,3 @@
-- debugger
-%p#notice= notice
-
 %p
   %b Category:
   = @admin_test.admin_test_category.name
@@ -14,11 +11,8 @@
   %b Fees:
   = @admin_test.fees
 %p
-  %b Commission type:
-  = @admin_test.commission_type
-%p
-  %b Commissin value:
-  = @admin_test.commissin_value
+  %b Comission:
+  = @admin_test.commission_value
 
 = link_to 'Edit', edit_admin_test_path(@admin_test)
 \|

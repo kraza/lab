@@ -1,3 +1,4 @@
 class Admin::TestCategory < ActiveRecord::Base
-  has_many :tests
+  has_many :admin_tests
+
 end

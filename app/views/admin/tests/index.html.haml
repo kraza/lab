@@ -6,24 +6,18 @@
     %th Code
     %th Name
     %th Fees
-    %th Commission type
-    %th Commissin value
+    %th Comission
     %th
     %th
     %th
 
   - @admin_tests.each do |admin_test|
     %tr
-      %td= admin_test.category_id
+      %td= admin_test.test_category.name.humanize
       %td= admin_test.code
       %td= admin_test.name
       %td= admin_test.fees
-      %td= admin_test.commission_type
-      %td= admin_test.commissin_value
+      %td= admin_test.commission_value
       %td= link_to 'Show', admin_test
       %td= link_to 'Edit', edit_admin_test_path(admin_test)
       %td= link_to 'Destroy', admin_test, :confirm => 'Are you sure?', :method => :delete
-
-%br
-
-= link_to 'New Test', new_admin_test_path

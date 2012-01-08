@@ -1,4 +1,6 @@
 TestPro::Application.routes.draw do
+  namespace :admin do resources :doctors end
+
   namespace :admin do resources :tests end
 
   namespace :admin do resources :test_categories end

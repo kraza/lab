@@ -1,9 +1,10 @@
 class Admin::TestsController < ApplicationController
   # GET /admin/tests
   # GET /admin/tests.xml
+  before_filter :authenticate_user!
   def index
-    @admin_tests = Admin::Test.all
-
+    @admin_tests = Admin::Test.where(:user_id => current_user.id)
+    @admin_tests.each{|test| test.test_category}
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @admin_tests }
@@ -14,7 +15,7 @@ class Admin::TestsController < ApplicationController
   # GET /admin/tests/1.xml
   def show
     @admin_test = Admin::Test.find(params[:id])
-
+    @admin_test.test_category
     respond_to do |format|
       format.html # show.html.erb
       format.xml  { render :xml => @admin_test }
@@ -40,7 +41,7 @@ class Admin::TestsController < ApplicationController
   # POST /admin/tests
   # POST /admin/tests.xml
   def create
-    @admin_test = Admin::Test.new(params[:admin_test])
+    @admin_test = Admin::Test.new(params[:admin_test].merge(:user_id => current_user.id))
 
     respond_to do |format|
       if @admin_test.save

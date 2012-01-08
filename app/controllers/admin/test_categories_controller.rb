@@ -3,7 +3,7 @@ class Admin::TestCategoriesController < ApplicationController
   # GET /admin/test_categories.xml
   before_filter :authenticate_user!
   def index
-    @admin_test_categories = Admin::TestCategory.all
+    @admin_test_categories = Admin::TestCategory.where(:user_id => current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,7 +41,7 @@ class Admin::TestCategoriesController < ApplicationController
   # POST /admin/test_categories
   # POST /admin/test_categories.xml
   def create
-    @admin_test_category = Admin::TestCategory.new(params[:admin_test_category])
+    @admin_test_category = Admin::TestCategory.new(params[:admin_test_category].merge(:user_id => current_user.id))
 
     respond_to do |format|
       if @admin_test_category.save

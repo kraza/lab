@@ -11,7 +11,24 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111229181559) do
+ActiveRecord::Schema.define(:version => 20120107105242) do
+
+  create_table "admin_doctors", :force => true do |t|
+    t.string   "code"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.string   "designation"
+    t.string   "cell"
+    t.string   "phone"
+    t.string   "address1"
+    t.string   "address2"
+    t.string   "postal"
+    t.string   "city"
+    t.string   "state"
+    t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "admin_test_categories", :force => true do |t|
     t.string   "name"
@@ -19,6 +36,7 @@ ActiveRecord::Schema.define(:version => 20111229181559) do
     t.boolean  "is_active",   :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "admin_tests", :force => true do |t|
@@ -27,10 +45,11 @@ ActiveRecord::Schema.define(:version => 20111229181559) do
     t.string   "name"
     t.decimal  "fees",            :precision => 6, :scale => 2
     t.string   "commission_type"
-    t.decimal  "commissin_value", :precision => 6, :scale => 2
+    t.decimal  "comission_value", :precision => 6, :scale => 2
     t.boolean  "is_active",                                     :default => true
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "user_id"
   end
 
   create_table "users", :force => true do |t|
