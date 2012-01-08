@@ -1,0 +1,41 @@
+%h1 Listing admin_doctors
+
+%table
+  %tr
+    %th Code
+    %th First name
+    %th Last name
+    %th Designation
+    %th Cell
+    %th Phone
+    %th Street1
+    %th Street2
+    %th Postal
+    %th City
+    %th State
+    %th User
+    %th
+    %th
+    %th
+
+  - @admin_doctors.each do |admin_doctor|
+    %tr
+      %td= admin_doctor.code
+      %td= admin_doctor.first_name
+      %td= admin_doctor.last_name
+      %td= admin_doctor.designation
+      %td= admin_doctor.cell
+      %td= admin_doctor.phone
+      %td= admin_doctor.address2
+      %td= admin_doctor.address2
+      %td= admin_doctor.postal
+      %td= admin_doctor.city
+      %td= admin_doctor.state
+      %td= admin_doctor.user_id
+      %td= link_to 'Show', admin_doctor
+      %td= link_to 'Edit', edit_admin_doctor_path(admin_doctor)
+      %td= link_to 'Destroy', admin_doctor, :confirm => 'Are you sure?', :method => :delete
+
+%br
+
+= link_to 'New Doctor', new_admin_doctor_path

@@ -1,0 +1,46 @@
+= form_for @admin_doctor do |f|
+  -if @admin_doctor.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@admin_doctor.errors.count, "error")} prohibited this admin_doctor from being saved:"
+      %ul
+        - @admin_doctor.errors.full_messages.each do |msg|
+          %li= msg
+
+  .field
+    = f.label :code
+    = f.text_field :code
+  .field
+    = f.label :first_name
+    = f.text_field :first_name
+  .field
+    = f.label :last_name
+    = f.text_field :last_name
+  .field
+    = f.label :designation
+    = f.text_field :designation
+  .field
+    = f.label :cell
+    = f.text_field :cell
+  .field
+    = f.label :phone
+    = f.text_field :phone
+  .field
+    = f.label :address1
+    = f.text_field :address1
+  .field
+    = f.label :address2
+    = f.text_field :address2
+  .field
+    = f.label :postal
+    = f.text_field :postal
+  .field
+    = f.label :city
+    = f.text_field :city
+  .field
+    = f.label :state
+    = f.text_field :state
+  .field
+    = f.label :user_id
+    = f.text_field :user_id
+  .actions
+    = f.submit 'Save'

@@ -1,0 +1,42 @@
+%p#notice= notice
+
+%p
+  %b Code:
+  = @admin_doctor.code
+%p
+  %b First name:
+  = @admin_doctor.first_name
+%p
+  %b Last name:
+  = @admin_doctor.last_name
+%p
+  %b Designation:
+  = @admin_doctor.designation
+%p
+  %b Cell:
+  = @admin_doctor.cell
+%p
+  %b Phone:
+  = @admin_doctor.phone
+%p
+  %b Street 1:
+  = @admin_doctor.address1
+%p
+  %b Address2:
+  = @admin_doctor.address2
+%p
+  %b Postal:
+  = @admin_doctor.postal
+%p
+  %b City:
+  = @admin_doctor.city
+%p
+  %b State:
+  = @admin_doctor.state
+%p
+  %b User:
+  = @admin_doctor.user_id
+
+= link_to 'Edit', edit_admin_doctor_path(@admin_doctor)
+\|
+= link_to 'Back', admin_doctors_path
