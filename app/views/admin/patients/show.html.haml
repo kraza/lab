@@ -1,0 +1,35 @@
+%p
+  %b Refrence no:
+  = @admin_patient.refrence_no
+%p
+  %b Initial name:
+  = @admin_patient.initial_name
+%p
+  %b First name:
+  = @admin_patient.first_name
+%p
+  %b Last name:
+  = @admin_patient.last_name
+%p
+  %b Admin doctor:
+  = @admin_patient.doctor.first_name
+  = @admin_patient.doctor.last_name
+%p
+  %b Test date:
+  = @admin_patient.test_date
+%p
+  %b Test delivery date:
+  = @admin_patient.test_delivery_date
+%p
+  %b Total amount:
+  = @admin_patient.total_amount
+%p
+  %b Advance payment:
+  = @admin_patient.advance_payment
+%p
+  %b Is doctor received payment:
+  = @admin_patient.is_doctor_received_payment
+
+= link_to 'Edit', edit_admin_patient_path(@admin_patient)
+\|
+= link_to 'Back', admin_patients_path

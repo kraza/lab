@@ -1,5 +1,3 @@
-%p#notice= notice
-
 %p
   %b Code:
   = @admin_doctor.code
@@ -33,10 +31,6 @@
 %p
   %b State:
   = @admin_doctor.state
-%p
-  %b User:
-  = @admin_doctor.user_id
-
 = link_to 'Edit', edit_admin_doctor_path(@admin_doctor)
 \|
 = link_to 'Back', admin_doctors_path

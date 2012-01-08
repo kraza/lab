@@ -29,3 +29,6 @@ gem "guard-cucumber", ">= 0.6.1", :group => :development
 gem "devise", "1.3.4"
 gem "rails-footnotes", ">= 3.7", :group => :development
 #gem "subdomain-fu"
+
+#For valid email address.
+#gem 'valid_email'

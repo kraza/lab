@@ -3,7 +3,7 @@ class Admin::DoctorsController < ApplicationController
   # GET /admin/doctors.xml
   before_filter :authenticate_user!
   def index
-    @admin_doctors = Admin::Doctor.all
+    @admin_doctors = Admin::Doctor.where(:user_id => current_user.id)
 
     respond_to do |format|
       format.html # index.html.erb
@@ -41,7 +41,7 @@ class Admin::DoctorsController < ApplicationController
   # POST /admin/doctors
   # POST /admin/doctors.xml
   def create
-    @admin_doctor = Admin::Doctor.new(params[:admin_doctor])
+    @admin_doctor = Admin::Doctor.new(params[:admin_doctor].merge(:user_id => current_user.id))
 
     respond_to do |format|
       if @admin_doctor.save

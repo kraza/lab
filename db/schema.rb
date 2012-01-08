@@ -11,7 +11,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20120107105242) do
+ActiveRecord::Schema.define(:version => 20120108150058) do
 
   create_table "admin_doctors", :force => true do |t|
     t.string   "code"
@@ -26,6 +26,22 @@ ActiveRecord::Schema.define(:version => 20120107105242) do
     t.string   "city"
     t.string   "state"
     t.integer  "user_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "email"
+  end
+
+  create_table "admin_patients", :force => true do |t|
+    t.string   "refrence_no"
+    t.string   "initial_name"
+    t.string   "first_name"
+    t.string   "last_name"
+    t.integer  "admin_doctor_id"
+    t.date     "test_date"
+    t.date     "test_delivery_date"
+    t.decimal  "total_amount",               :precision => 10, :scale => 0
+    t.decimal  "advance_payment",            :precision => 10, :scale => 0
+    t.boolean  "is_doctor_received_payment"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

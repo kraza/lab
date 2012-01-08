@@ -1,0 +1,33 @@
+%h1 Listing admin_patients
+
+%table
+  %tr
+    %th Refrence no
+    %th Initial name
+    %th First name
+    %th Last name
+    %th Admin doctor
+    %th Test date
+    %th Test delivery date
+    %th Total amount
+    %th Advance payment
+    %th Is doctor received payment
+    %th
+    %th
+    %th
+
+  - @admin_patients.each do |admin_patient|
+    %tr
+      %td= admin_patient.refrence_no
+      %td= admin_patient.initial_name
+      %td= admin_patient.first_name
+      %td= admin_patient.last_name
+      %td= admin_patient.admin_doctor_id
+      %td= admin_patient.test_date
+      %td= admin_patient.test_delivery_date
+      %td= admin_patient.total_amount
+      %td= admin_patient.advance_payment
+      %td= admin_patient.is_doctor_received_payment
+      %td= link_to 'Show', admin_patient
+      %td= link_to 'Edit', edit_admin_patient_path(admin_patient)
+      %td= link_to 'Destroy', admin_patient, :confirm => 'Are you sure?', :method => :delete
